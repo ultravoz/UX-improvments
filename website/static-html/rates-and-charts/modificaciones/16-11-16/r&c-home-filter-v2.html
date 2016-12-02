@@ -365,6 +365,7 @@
                                     </div>
                                 </div>
                             </li>
+
                             <li class="fxs_listView_item fxs_listView_item_high">
                                 <div class="fxs_widget_price fxs_widget_price_listView price_up">
                                     <span class="fxs_asset_label_block">
@@ -388,6 +389,7 @@
                                     </div>
                                 </div>
                             </li>
+
                             <li class="fxs_listView_item fxs_listView_item_high">
                                 <div class="fxs_widget_price fxs_widget_price_listView price_up">
                                     <span class="fxs_asset_label_block">
@@ -410,6 +412,7 @@
                                     </div>
                                 </div>
                             </li>
+
                             <li class="fxs_listView_item fxs_listView_item_high">
                                 <div class="fxs_widget_price fxs_widget_price_listView price_down">
                                     <span class="fxs_asset_label_block">
@@ -432,9 +435,11 @@
                                     </div>
                                 </div>
                             </li>
+
                             <li class="fxs_listView_item fxs_listView_item_high">
                                 <img class="" src="doc/AD-1.jpg">
                             </li>
+
                             <li class="fxs_listView_item fxs_listView_item_high">
                                 <div class="fxs_widget_price fxs_widget_price_listView price_up">
                                     <span class="fxs_asset_label_block">
@@ -457,6 +462,7 @@
                                     </div>
                                 </div>
                             </li>
+
                             <li class="fxs_listView_item fxs_listView_item_high">
                                 <div class="fxs_widget_price fxs_widget_price_listView price_down">
                                     <span class="fxs_asset_label_block">
@@ -481,7 +487,31 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="fxs_listView_item fxs_listView_item_high fxs_demo_show_another">
+
+                            <li class="fxs_listView_item fxs_listView_item_high fxs_demo_show_six">
+                                <div class="fxs_widget_price fxs_widget_price_listView price_up">
+                                    <span class="fxs_asset_label_block">
+                                        <abbr class="fxs_asset_label" title="Euro - US Dollar">
+                                            <a href="/">NZD/USD</a>
+                                        </abbr>
+                                        <span class="fxs_price_change">
+                                            <span class="fxs_change_pips">0.0032</span>
+                                            <span class="fxs_change_percent">(0.12%)</span>
+                                        </span>
+                                    </span>
+
+                                    <div class="fxs_widget_price_value">
+                                        <span class="fxs_price_bidask">1.27<strong class="fxs_price_big_figure">92</strong><sup>5</sup>/<strong class="fxs_price_big_figure">89</strong><sup>7</sup></span>
+                                        <small class="fxs_price_ohl">
+                                            <span>Open 1.1872</span>
+                                            <span>High 1.1872</span>
+                                            <span>Low 1.1810</span>
+                                        </small>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="fxs_listView_item fxs_listView_item_high fxs_demo_show_eight fxs_show">
                                 <div class="fxs_widget_price fxs_widget_price_listView price_up">
                                     <span class="fxs_asset_label_block">
                                         <abbr class="fxs_asset_label" title="Euro - US Dollar">
@@ -3908,7 +3938,7 @@
         });
         $('.fa-minus-circle').click(function(){
             $('.fxs_demo_default_items').show();
-            $('.fxs_demo_show_another').hide();
+            $('.fxs_demo_show_six').hide();
             $('.fxs_demo_default_items').hide();
             $('li.fxs_remove_item').remove();
             $('.fxs_assets_number').toggleText('7 assets','6 assets');
@@ -3962,7 +3992,7 @@
 
         // add item to list
         $('.fxs_demo_check a').click( function(){
-            $('.fxs_add_item').toggleClass('fxs_show');
+            $('.fxs_add_item, .fxs_demo_show_eight').toggleClass('fxs_show');
             $(this).find('i').toggleClass('fa-plus-circle').toggleClass('fa-check');
             $(this).parent().toggleClass('fxs_asset_selected');
             $('.fxs_assets_number').toggleText('7 assets','8 assets');
@@ -3972,7 +4002,7 @@
         $(".fxs_filter_reset").click(function(){
             $('.fxs_assets_number').toggleText('6 assets','7 assets');
             $('.fxs_demo_default_items').show();
-            $('.fxs_demo_show_another').hide();
+            $('.fxs_demo_show_six').hide();
             $("#fxs_listView_defalult").html("<ul class='fxs_list_unstyled fxs_rates_filter_list'><li class='fxs_remove_item'><div>EUR/USD</div> <i class='fa fa-minus-circle' aria-hidden='true' title='delete item from list'></i></li><li><div>USD/JPY</div> <i class='fa fa-minus-circle' aria-hidden='true' title='delete item from list'></i></li><li><div>GBP/USD</div> <i class='fa fa-minus-circle' aria-hidden='true' title='delete item from list'></i></li><li><div>AUD/USD</div> <i class='fa fa-minus-circle aria-hidden='true' title='delete item from list'></i></li><li><div>USD/CAD</div> <i class='fa fa-minus-circle' aria-hidden='true' title='delete item from list'></i></li><li><div>NZD/USD</div> <i class='fa fa-minus-circle' aria-hidden='true' title='delete item from list'></i></li><li><div>EUR/GBP</div> <i class='fa fa-minus-circle' aria-hidden='true' title='delete item from list'></i></li></ul>");
         });
 
