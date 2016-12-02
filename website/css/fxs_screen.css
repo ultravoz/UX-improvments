@@ -3860,6 +3860,7 @@ h5 a:hover,
 .fxs_content,
 .fxs_pageSidebar,
 .fxs_timezone_hours,
+.fxs_price_filter_sidebar .fxs_typeaheadList,
 .fxs_listViewRail,
 .fxs_copy_disclaimer .fxs_terms_nav .fxs_dropdownList {
   -webkit-overflow-scrolling: touch;
@@ -3874,6 +3875,7 @@ h5 a:hover,
   .fxs_content,
   .fxs_pageSidebar,
   .fxs_timezone_hours,
+  .fxs_price_filter_sidebar .fxs_typeaheadList,
   .fxs_listViewRail,
   .fxs_copy_disclaimer .fxs_terms_nav .fxs_dropdownList {
     -ms-overflow-style: -ms-autohiding-scrollbar;
@@ -3906,6 +3908,10 @@ h5 a:hover,
   .fxs_timezone_hours::-webkit-scrollbar-track,
   .fxs_timezone_hours::-webkit-scrollbar-corner,
   .fxs_timezone_hours::-webkit-scrollbar-button,
+  .fxs_price_filter_sidebar .fxs_typeaheadList::-webkit-scrollbar,
+  .fxs_price_filter_sidebar .fxs_typeaheadList::-webkit-scrollbar-track,
+  .fxs_price_filter_sidebar .fxs_typeaheadList::-webkit-scrollbar-corner,
+  .fxs_price_filter_sidebar .fxs_typeaheadList::-webkit-scrollbar-button,
   .fxs_listViewRail::-webkit-scrollbar,
   .fxs_listViewRail::-webkit-scrollbar-track,
   .fxs_listViewRail::-webkit-scrollbar-corner,
@@ -3923,6 +3929,7 @@ h5 a:hover,
   .fxs_content::-webkit-scrollbar,
   .fxs_pageSidebar::-webkit-scrollbar,
   .fxs_timezone_hours::-webkit-scrollbar,
+  .fxs_price_filter_sidebar .fxs_typeaheadList::-webkit-scrollbar,
   .fxs_listViewRail::-webkit-scrollbar,
   .fxs_copy_disclaimer .fxs_terms_nav .fxs_dropdownList::-webkit-scrollbar {
     width: 5px;
@@ -3936,6 +3943,7 @@ h5 a:hover,
   .fxs_content::-webkit-scrollbar-track,
   .fxs_pageSidebar::-webkit-scrollbar-track,
   .fxs_timezone_hours::-webkit-scrollbar-track,
+  .fxs_price_filter_sidebar .fxs_typeaheadList::-webkit-scrollbar-track,
   .fxs_listViewRail::-webkit-scrollbar-track,
   .fxs_copy_disclaimer .fxs_terms_nav .fxs_dropdownList::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 -2px 4px rgba(255, 255, 255, 0.33);
@@ -3949,12 +3957,13 @@ h5 a:hover,
   .fxs_content::-webkit-scrollbar-thumb,
   .fxs_pageSidebar::-webkit-scrollbar-thumb,
   .fxs_timezone_hours::-webkit-scrollbar-thumb,
+  .fxs_price_filter_sidebar .fxs_typeaheadList::-webkit-scrollbar-thumb,
   .fxs_listViewRail::-webkit-scrollbar-thumb,
   .fxs_copy_disclaimer .fxs_terms_nav .fxs_dropdownList::-webkit-scrollbar-thumb {
     -webkit-box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.75);
     -moz-box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.75);
     box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.75);
-    background-color: rgba(120, 121, 122, 0.4);
+    background-color: rgba(73, 73, 79, 0.8);
     border-radius: 0;
   }
   .fxs_scrollableContent::-webkit-scrollbar-button,
@@ -3964,6 +3973,7 @@ h5 a:hover,
   .fxs_content::-webkit-scrollbar-button,
   .fxs_pageSidebar::-webkit-scrollbar-button,
   .fxs_timezone_hours::-webkit-scrollbar-button,
+  .fxs_price_filter_sidebar .fxs_typeaheadList::-webkit-scrollbar-button,
   .fxs_listViewRail::-webkit-scrollbar-button,
   .fxs_copy_disclaimer .fxs_terms_nav .fxs_dropdownList::-webkit-scrollbar-button {
     display: none;
@@ -4832,6 +4842,11 @@ height:calc(100% - 45px);
   position: relative;
   top: 0;
   z-index: 2;
+  -lh-property: 0;
+height:-webkit-calc(100% - 50px - 45px);
+height:-moz-calc(100% - 50px - 45px);
+height:calc(100% - 50px - 45px);
+;
 }
 .fxs_listView_vers .fxs_blur_effect {
   -webkit-filter: opacity(0.1);
@@ -4879,6 +4894,9 @@ height:calc(100% - 45px);
   border-bottom: 1px solid #ffffff;
   padding: 3px;
 }
+.fxs_price_filter_sidebar .fxs_rates_filter_list .fxs_show {
+  display: none;
+}
 .fxs_price_filter_sidebar .fxs_rates_filter_list .fa-minus-circle {
   color: #ffffff;
 }
@@ -4919,6 +4937,9 @@ height:calc(100% - 45px);
   text-decoration: underline;
   font-weight: 400;
 }
+.fxs_price_filter_sidebar .fxs_apply_filters_block .fxs_filter_reset:hover {
+  text-decoration: none;
+}
 .fxs_price_filter_sidebar .fxs_apply_filters_block .fxs_assets_info {
   background-color: #B1C4D5;
   padding: 0.3rem;
@@ -4943,6 +4964,7 @@ height:calc(100% - 45px);
   list-style: none;
   margin: 3px 0 0 0.5rem!important;
   padding: 0;
+  max-height: 200px;
   width: 95%!important;
 }
 .fxs_price_filter_sidebar .fxs_typeaheadList .fxs_typeaheadTxt {
@@ -5017,6 +5039,10 @@ height:calc(100% - 45px);
 }
 .fxs_listView_vers_btn .fxs_filter_price_btn .toggled_txt {
   font-size: 0.8rem !important;
+}
+.fxs_listView_vers_btn .fxs_filter_price_btn .toggled_txt:hover {
+  text-decoration: none;
+  color: #ffffff;
 }
 .fxs_listView_vers_btn .fxs_label_filter {
   background-color: #304c70;
@@ -5187,16 +5213,16 @@ height:calc(100% - 35px - 45px);
 .fxs_listView_adContiner.listView_item_active .up * {
   color: #25252b;
 }
-.fxs_listeView_loadMore {
+.fxs_listView_loadMore {
   text-align: center;
   padding: 1rem;
   font-size: 0.8rem;
 }
-.fxs_listeView_loadMore a {
+.fxs_listView_loadMore a {
   color: #ffffff;
   font-weight: 400;
 }
-.fxs_listeView_loadMore a span {
+.fxs_listView_loadMore a span {
   padding-right: 5px;
   vertical-align: 4px;
 }
@@ -5465,7 +5491,7 @@ fieldset[disabled] .fxs_rates_addPair {
   margin-bottom: 5px;
 }
 .fxs_rates_filter_list li div {
-  min-width: 65px;
+  min-width: 120px;
   display: inline-block;
 }
 .fxs_rates_filter_list .fa-minus-circle {

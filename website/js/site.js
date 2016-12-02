@@ -137,7 +137,11 @@ $(document).ready(function () {
                 data: ratesFilter.pairs,
                 template: '',
                 //template:' '<span class="fxs_typeaheadTxt">{{display}}<span class="fxs_typeaheadTxt">
-            }
+            },
+             Currencies: {
+                data: rates.currencies,
+                template: '<span class="fxs_typeaheadTxt">{{display}}<span class="fxs_typeaheadTxt">'
+            },
         },
         debug: true
     });
