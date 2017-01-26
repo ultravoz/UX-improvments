@@ -4019,7 +4019,7 @@ width:calc(100% + @half_base_spacer);
 .fxs_content {
   position: relative;
   background-color: #ececf1;
-  overflow: hidden;
+  overflow: visible;
   height: 100%;
   padding-top: 35px;
   -lh-property: 0;
@@ -6288,7 +6288,7 @@ width:calc(100% - 315px - 5px);
   .fxs_push_timezone .fxs_wallpaper_wrap {
     top: 0;
     right: 0;
-    position: inherit;
+    position: absolute;
   }
 }
 @media (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 0) {
