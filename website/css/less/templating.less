@@ -24,7 +24,7 @@
   &:extend(.fxs_pageSidebar_transition, .fxs_scrollableContent all);
   position: relative;
   background-color: @light_4_clr;
-  overflow: hidden;
+  overflow: visible;
   height: 100%;
   padding-top: @base_module_size;
   .calc(height, ~'100% - @{double_module_size}');
@@ -1818,7 +1818,7 @@ clean rules for new calendar widget
     overflow: hidden;
     /* saf3+, chrome1+ */
     @media (-webkit-min-device-pixel-ratio: 0) { /*right: 10px;*/ }
-    .cbp-spmenu-push-toleft &, .fxs_push_timezone & { top: 0; right: 0; position:inherit;}
+    .cbp-spmenu-push-toleft &, .fxs_push_timezone & { top: 0; right: 0; position:absolute;}
     @media (-moz-min-device-pixel-ratio: 0 ){ /*right: 23px;*/ }
   }
   a {
