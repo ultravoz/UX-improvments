@@ -1112,6 +1112,86 @@
         <script src="../../js/jquery.pin.js" sync></script>
         <script src="../../js/site.js" sync></script>
 
+          <script>
+
+        // load more button
+        $('#fxs_loadMore_btn').click( function(){
+            $(".fxs_hideElements" ).slideToggle('slow');
+            $('.fxs_listView_loadMore_label').toggleText('LOAD MORE CURRENCY ASSETS','SHOW LESS CURRENCY ASSETS');
+            $(this).find('i').toggleClass('fa-chevron-down').toggleClass('fa-chevron-up');
+        });
+        $('.fa-minus-circle').click(function(){
+            $('.fxs_demo_default_items').show();
+            $('.fxs_demo_show_six').hide();
+            $('.fxs_demo_default_items').hide();
+            $('li.fxs_remove_item').remove();
+            $('.fxs_assets_number').toggleText('7 assets','6 assets');
+        })
+        // i use this to toogle text
+        $.fn.extend({
+            toggleText: function(a, b){
+                return this.text(this.text() == b ? a : b);
+            }
+        });
+
+        // click filter button apply blur effect to background and change text label
+        $('#fxs_filter').click( function(){
+            $('.fxs_asset_label_filter').toggleText('ASSETS','CUSTOMIZE ASSETS');
+            $('.fxs_listView_blockWrapper').toggleClass('fxs_blur_effect');
+        });
+
+        // disable filter in mobile devices
+        $('button#fxs_filter').attr("disabled","disabled");
+        if($(window).width() >= 680){
+          $('button#fxs_filter').removeAttr("disabled");
+        }
+        $('.fxs_listView_mobile').click( function(){
+            $('.fxs_filter_rail_container,.fxs_advanced_filter').css('display','none');
+            $(".fxs_listViewRail").slideToggle('slow');
+            $(this).find('i').toggleClass('fa-chevron-down').toggleClass('fa-chevron-up');
+        })
+
+        // apply changes button 
+        $('.fxs_apply_filter_btn').click( function(){
+            $('.fxs_apply_filter_msg').show().delay(2000).fadeOut(function() { $(this).empty(); });
+            $('.fxs_demo_default_items').hide();
+            setTimeout(function() {
+                   $('#rates-filter-block').removeClass("in");
+                   $('.fxs_listView_blockWrapper').removeClass('fxs_blur_effect');
+                   $("#fxs_filter").addClass('collapsed');
+                    $("#fxs_filter").attr('aria-expanded','false');
+                   $('.fxs_asset_label_filter').toggleText('CUSTOMIZE ASSETS','YOUR CUSTOM ASSETS');
+            }, 2500);
+        });
+
+        // cancel button 
+        $('.fxs_apply_cancel_btn').click(function(){
+            $('.fxs_demo_default_items').show();
+            $('#rates-filter-block').removeClass("in");
+            $("#fxs_filter").addClass('collapsed');
+            $("#fxs_filter").attr('aria-expanded','false');
+            $('.fxs_listView_blockWrapper').removeClass('fxs_blur_effect');
+            $('.fxs_asset_label_filter').toggleText('CUSTOMIZE ASSETS','ASSETS');
+        });
+
+        // add item to list
+        $('.fxs_demo_check a').click( function(){
+            $('.fxs_add_item, .fxs_demo_show_eight').toggleClass('fxs_show');
+            $(this).find('i').toggleClass('fa-plus-circle').toggleClass('fa-check');
+            $(this).parent().toggleClass('fxs_asset_selected');
+            $('.fxs_assets_number').toggleText('7 assets','8 assets');
+        })
+
+        // button trigger to simulate refresh default assets, this load 7 default items
+        $(".fxs_filter_reset").click(function(){
+            $('.fxs_assets_number').toggleText('6 assets','7 assets');
+            $('.fxs_demo_default_items').show();
+            $('.fxs_demo_show_six').hide();
+            $("#fxs_listView_defalult").html("<ul class='fxs_list_unstyled fxs_rates_filter_list'><li class='fxs_remove_item'><div>EUR/USD</div> <i class='fa fa-minus-circle' aria-hidden='true' title='delete item from list'></i></li><li><div>USD/JPY</div> <i class='fa fa-minus-circle' aria-hidden='true' title='delete item from list'></i></li><li><div>GBP/USD</div> <i class='fa fa-minus-circle' aria-hidden='true' title='delete item from list'></i></li><li><div>AUD/USD</div> <i class='fa fa-minus-circle aria-hidden='true' title='delete item from list'></i></li><li><div>USD/CAD</div> <i class='fa fa-minus-circle' aria-hidden='true' title='delete item from list'></i></li><li><div>NZD/USD</div> <i class='fa fa-minus-circle' aria-hidden='true' title='delete item from list'></i></li><li><div>EUR/GBP</div> <i class='fa fa-minus-circle' aria-hidden='true' title='delete item from list'></i></li></ul>");
+        });
+
+        </script>
+
     </body>
 
 </html>
